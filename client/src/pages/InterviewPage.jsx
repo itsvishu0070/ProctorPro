@@ -1057,7 +1057,9 @@ import "@tensorflow/tfjs-backend-webgl";
 import "@tensorflow/tfjs-backend-cpu";
 import { uploadVideo } from "../services/api"; 
 
-const socket = io("http://localhost:5000");
+// const socket = io("http://localhost:5000");
+
+const socket = io("https://proctorpro-1.onrender.com");
 
 
 const mernStackQuestions = [

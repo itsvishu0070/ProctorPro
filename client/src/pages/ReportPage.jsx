@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import { getSessionById, downloadReportAPI } from "../services/api";
 import io from "socket.io-client"; 
 
-const socket = io("http://localhost:5000"); 
+// const socket = io("http://localhost:5000"); 
+const socket = io("https://proctorpro-1.onrender.com"); 
 
 const ReportPage = () => {
   const { sessionId } = useParams();
