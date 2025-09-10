@@ -1,0 +1,796 @@
+/* --- General Styles --- */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* --- Home Page & Guidelines --- */
+/* .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-card {
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1c1c1e;
+}
+
+.form-subtitle {
+    margin-bottom: 30px;
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+} */
+
+/* .form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.form-button:disabled {
+    background-color: #a0cffc;
+    cursor: not-allowed;
+}
+
+.form-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: #d93025;
+    font-weight: 500;
+}
+
+.guidelines-content {
+    text-align: center;
+}
+
+.guidelines-list {
+    padding-left: 0;
+    margin: 30px 0;
+    color: #495057;
+    display: inline-block;
+    text-align: left;
+}
+
+.guidelines-list li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.guidelines-warning {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+} */
+
+/* --- Interview Page (Split Layout) --- */
+/* .interview-page-split {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.question-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+} */
+
+/* --- New Homepage Layout --- */
+.homepage-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.homepage-left-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.homepage-right-panel {
+    flex: 0 0 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    background: linear-gradient(-45deg, #0d324d, #7f5a83, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.branding-content {
+    max-width: 500px;
+}
+
+.branding-content h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.branding-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+.features-list li {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* --- Auth Card (Form & Guidelines) --- */
+.auth-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.auth-header {
+    margin-bottom: 30px;
+}
+
+/* .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+} */
+.logo-text {
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff4d4d, #ff9800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.logo-text:hover {
+    transform: scale(1.05);
+}
+.form-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1c1c1e;
+}
+
+.form-subtitle {
+    margin-bottom: 30px;
+    color: #000000;
+    font-size: 1rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    /* color: #495057; */
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    
+}
+
+.form-group input:focus {
+    outline: none;
+    /* border-color: #007bff; */
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.form-button {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.form-button:disabled {
+    background-color: #a0cffc;
+    cursor: not-allowed;
+}
+
+.form-button:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.error-message {
+    color: #d93025;
+    font-weight: 500;
+}
+
+
+/* --- Guidelines View Styles --- */
+.guidelines-content {
+    text-align: left;
+}
+
+.guidelines-list {
+    padding-left: 20px;
+    margin: 25px 0;
+    color: #495057;
+}
+
+.guidelines-list li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.guidelines-warning {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+
+ /* .interview-page-split {
+     display: flex;
+     width: 100vw;
+     height: 100vh;
+     background-color: #f0f2f5;
+ }
+
+ .question-area {
+     flex: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 40px;
+ }
+
+ .video-area {
+     width: 380px;
+     background-color: #333;
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+ }
+
+.start-interview-panel,
+.live-interview-panel {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.live-interview-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-height: 500px;
+}
+
+.question-display h2 {
+    color: #007bff;
+}
+
+.question-display p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #333;
+    min-height: 150px;
+}
+
+.question-navigation {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-btn {
+    width: auto;
+    padding: 10px 30px;
+    background-color: #6c757d;
+    font-weight: normal;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #5a6268;
+}
+
+.end-interview-footer {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.end-interview-footer p {
+    color: #999;
+}
+
+.end-button {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.end-button:hover {
+    background-color: #c82333;
+}
+
+.video-area {
+    width: 380px;
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.video-container-corner {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #555;
+}
+
+.alerts-panel-corner {
+    flex: 1;
+    background: #444;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+.alerts-panel-corner h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
+}
+
+.alerts-panel-corner ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.alerts-panel-corner li {
+    padding: 8px 0;
+    border-bottom: 1px solid #555;
+    color: #ffcccc;
+} */
+
+
+
+.interview-page-split {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f9fafb;
+    /* soft neutral bg */
+    font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+/* === Question Area === */
+.question-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.start-interview-panel,
+.live-interview-panel {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.live-interview-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-height: 500px;
+}
+
+/* === Question Display === */
+.question-display h2 {
+    color: #0d47a1;
+    /* deep professional blue */
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.question-display p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #333;
+    min-height: 150px;
+}
+
+/* === Navigation === */
+.question-navigation {
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.nav-btn {
+    padding: 12px 28px;
+    background-color: #6c757d;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #495057;
+    transform: translateY(-2px);
+}
+
+/* === Footer === */
+.end-interview-footer {
+    border-top: 1px solid #e9ecef;
+    padding-top: 18px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.end-interview-footer p {
+    color: #868e96;
+    font-size: 0.9rem;
+}
+
+.end-button {
+    padding: 12px 24px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.end-button:hover {
+    background-color: #c82333;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+    transform: translateY(-2px);
+}
+
+/* === Video + Alerts Area === */
+.video-area {
+    width: 380px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-left: 1px solid #2c2c2c;
+}
+
+.video-container-corner {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #444;
+    background: #000;
+}
+
+.alerts-panel-corner {
+    flex: 1;
+    background: #2b2b2b;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+    font-size: 0.95rem;
+}
+
+.alerts-panel-corner h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f1f1f1;
+}
+
+.alerts-panel-corner ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.alerts-panel-corner li {
+    padding: 8px 0;
+    border-bottom: 1px solid #3a3a3a;
+    color: #ffb3b3;
+    line-height: 1.4;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Admin Dashboard & Report Pages --- */
+/* .admin-dashboard,
+.report-page {
+    width: 100%;
+    max-width: 1000px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} */
+
+.admin-dashboard,
+.report-page {
+    background: white;
+    /* Add more horizontal padding for a full-screen view */
+    padding: 30px 50px;
+    /* Make the content area fill the screen's height */
+    min-height: calc(100vh - 60px);
+    box-sizing: border-box;
+}
+.sessions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.sessions-table th,
+.sessions-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.sessions-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.sessions-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.report-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.report-link:hover {
+    text-decoration: underline;
+}
+
+.report-summary {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    
+}
+
+.report-summary .score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d93025;
+}
+
+.report-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    
+}
+
+.events-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.events-section li {
+    padding: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size:smaller;
+}
+
+.report-header h1 {
+    margin: 0;
+}
+
+.download-btn {
+    padding: 10px 15px;
+    width: auto;
+    
+}
+.download-btn:hover{
+   background-color:blueviolet; 
+   color: black;
+
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Model Diagnostic Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@latest"></script>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 20px; background-color: #282c34; color: white; }
+        video { border: 2px solid #61dafb; }
+        #log { color: #61dafb; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>AI Model Diagnostic Test</h1>
+    <p>Check the browser's developer console (F12) for detection logs.</p>
+    <video id="webcam" width="640" height="480" autoplay muted playsinline></video>
+    <h2 id="log">Loading AI Models...</h2>
+
+    <script>
+        const video = document.getElementById('webcam');
+        const log = document.getElementById('log');
+        let models = {};
+
+        async function setupCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: { width: 640, height: 480 },
+                    audio: false
+                });
+                video.srcObject = stream;
+                return new Promise((resolve) => {
+                    video.onloadedmetadata = () => resolve();
+                });
+            } catch (e) {
+                console.error("Camera setup failed:", e);
+                log.innerText = "Camera Error! Please grant permission and refresh.";
+            }
+        }
+
+        async function loadModels() {
+            try {
+                const [objectModel, faceDetector] = await Promise.all([
+                    cocoSsd.load(),
+                    faceLandmarksDetection.createDetector(
+                        faceLandmarksDetection.SupportedModels.MediaPipeFaceMesh, 
+                        { runtime: 'mediapipe', solutionPath: 'https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh' }
+                    )
+                ]);
+                models.object = objectModel;
+                models.face = faceDetector;
+                log.innerText = "Models Loaded. Starting Detections...";
+                console.log("AI Models Loaded Successfully.");
+            } catch (e) {
+                console.error("Model loading failed:", e);
+                log.innerText = "Model Loading Failed. Check console.";
+            }
+        }
+
+        async function runDetections() {
+            if (Object.keys(models).length === 0) return;
+            
+            const objectDetections = await models.object.detect(video);
+            const faceDetections = await models.face.estimateFaces(video);
+
+            console.clear(); // Keep console clean
+            console.log("--- New Detection Frame ---");
+            console.log("Object Detections:", objectDetections);
+            console.log("Face Detections:", faceDetections);
+
+            if (faceDetections.length > 0) {
+                 log.innerText = `Face Detected! Objects: ${objectDetections.length}`;
+            } else {
+                 log.innerText = "No Face Detected.";
+            }
+        }
+
+        async function main() {
+            await setupCamera();
+            await loadModels();
+            setInterval(runDetections, 2000);
+        }
+
+        main();
+    </script>
+</body>
+</html>
